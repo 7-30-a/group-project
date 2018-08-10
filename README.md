@@ -1,27 +1,18 @@
-# GroupProject
+# final-project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+DEVELOPMENT
+* Open CLI window
+1. *cd group-project*
+2. *npm install* 
+3. *ng build*
+4. *npm start*
+* Your app will be served on port 8080
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+PRODUCTION
+* To deploy your app to Heroku, complete the following steps:
+1. Signup for a free Heroku account at https://www.heroku.com
+2. Create a new Heroku app inside the dashboard
+3. Once created, select the Github integration option
+4. After you've connected to Github, you'll need to select the repo you are connecting to (group-project)
+5. Once it has been selected, scroll down to Manual Deploy and click the Deploy button
+* After the initial deploy, your team will need to continue to deploy small features as they are completed in development. Do not attempt to deploy several new features at once as it often will result in production issues.
