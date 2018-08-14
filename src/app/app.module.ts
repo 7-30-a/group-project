@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { Quiz1Component } from './quizzes/quiz1/quiz1.component';
@@ -32,7 +31,6 @@ import { Quiz9Component } from './quizzes/quiz9/quiz9.component';
     Quiz7Component,
     Quiz8Component,
     Quiz9Component,
- 
   ],
   imports: [
     BrowserModule,
