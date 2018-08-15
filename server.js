@@ -1,9 +1,11 @@
 // module imports
 const express = require('express');
 const path = require('path');
+let mongodb = require('mongodb');
 const bodyParser = require("body-parser");
 const cors = require('cors')
 
+mongodb.connect('mongodb://Admin:@dmin123@ds121332.mlab.com:21332/quizu')
 // express config
 const app = express();
 app.use(bodyParser.json())

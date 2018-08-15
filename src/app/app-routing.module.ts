@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { LoginComponent } from "./login/login.component";
 import { AboutComponent } from "./about/about.component";
 import { HomeComponent } from "./home/home.component";
+import { RegisterComponent } from './register/register.component';
 import { Quiz1Component } from "./quizzes/quiz1/quiz1.component";
 import { Quiz2Component } from "./quizzes/quiz2/quiz2.component";
 import { Quiz3Component } from "./quizzes/quiz3/quiz3.component";
@@ -21,6 +22,7 @@ const routes: Routes = [
 	{ path: "login", component: LoginComponent },
 	{ path: "about", component: AboutComponent },
 	{ path: "home", component: HomeComponent },
+	{ path: "register", component: RegisterComponent},
 	{ path: "quiz1", component: Quiz1Component },
 	{ path: "quiz2", component: Quiz2Component },
 	{ path: "quiz3", component: Quiz3Component },
