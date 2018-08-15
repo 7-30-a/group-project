@@ -14,6 +14,7 @@ import { Quiz6Component } from './quizzes/quiz6/quiz6.component';
 import { Quiz7Component } from './quizzes/quiz7/quiz7.component';
 import { Quiz8Component } from './quizzes/quiz8/quiz8.component';
 import { Quiz9Component } from './quizzes/quiz9/quiz9.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { Quiz9Component } from './quizzes/quiz9/quiz9.component';
     Quiz7Component,
     Quiz8Component,
     Quiz9Component,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
