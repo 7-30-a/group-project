@@ -26,7 +26,8 @@ app.use(bodyParser.json())
 
 var distDir = __dirname + "/dist/group-project/";
 app.use(express.static(distDir));
-
+const users = require('./routes/users');
+app.use('/users',users);
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname + "/dist/group-project/"))
 })
