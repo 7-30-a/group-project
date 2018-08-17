@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
 import { UserService } from '../user.service';
 
 @Component({
@@ -8,14 +7,17 @@ import { UserService } from '../user.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
- user:any
+  user: any
 
- register(){
-  this.userService.register(this.user).subscribe((data: any) => {
-    localStorage.setItem('token',data.token)
-  });
- }
-  constructor(private userService: UserService) { }
+  register() {
+    this.userService.register(this.user).subscribe((data: any) => {
+      localStorage.setItem('token', data.token) 
+    });
+  }
+
+  constructor(private userService: UserService) {
+
+  }
 
   ngOnInit() {
     this.user = {}
