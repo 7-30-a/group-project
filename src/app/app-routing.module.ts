@@ -5,6 +5,7 @@ import { LoginComponent } from "./login/login.component";
 import { AboutComponent } from "./about/about.component";
 import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from './register/register.component';
+
 import { Quiz1Component } from "./quizzes/quiz1/quiz1.component";
 import { Quiz2Component } from "./quizzes/quiz2/quiz2.component";
 import { Quiz3Component } from "./quizzes/quiz3/quiz3.component";
