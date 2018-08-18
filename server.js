@@ -6,7 +6,7 @@ let passport = require('passport');
 const bodyParser = require("body-parser");
 const cors = require('cors')
 
-mongoose.connect('mongodb://Admin:password123@ds121332.mlab.com:21332/quizu')
+mongoose.connect('mongodb://Admin:password123@ds121332.mlab.com:21332/quizu',{useNewUrlParser:true}) 
 // express config
 const app = express();
 app.use(bodyParser.json())
@@ -15,17 +15,17 @@ app.use(passport.initialize());
 // !!! DEVELOPMENT ONLY (start) !!! //
 
  //var corsOptions = {
- //    origin: 'http://localhost:4200',
+ // /   origin: 'http://localhost:4200',
  //    optionsSuccessStatus: 200 
  //}
   
-// app.use(cors(corsOptions))
+ //app.use(cors(corsOptions))
 
 // !!! DEVELOPMENT ONLY (end) !!! //
 
 
 // !!! PRODUCTION ONLY (start) !!! //
-require('./')
+
 require('./models/users');
 
 const users = require('./routes/users');

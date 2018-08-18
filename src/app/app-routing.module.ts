@@ -18,7 +18,7 @@ import { Quiz9Component } from "./quizzes/quiz9/quiz9.component";
 
 const routes: Routes = [
 
-	{ path: "", redirectTo: "/login", pathMatch: "full" },
+	{ path: "", redirectTo: "/register", pathMatch: "full" },
 	{ path: "login", component: LoginComponent },
 	{ path: "about", component: AboutComponent },
 	{ path: "home", component: HomeComponent },
@@ -35,7 +35,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)
+  imports: [CommonModule,RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
   declarations:[]

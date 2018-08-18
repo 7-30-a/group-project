@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
   register(user) {
-    return this.http.post(`${window.location.origin}/users/register`, user);
+    return this.http.post(`${window.location.origin}/register`, user);
   }
 
   login(user) {
