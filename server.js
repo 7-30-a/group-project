@@ -1,28 +1,35 @@
-// module imports
+
 const express = require('express');
 const path = require('path');
-let mongodb = require('mongodb');
+let mongoose = require('mongoose');
+let passport = require('passport');
 const bodyParser = require("body-parser");
 const cors = require('cors')
 
-mongodb.connect('mongodb://Admin:@dmin123@ds121332.mlab.com:21332/quizu')
-// express config
+mongoose.connect('mongodb://Admin:password123@ds121332.mlab.com:21332/quizu');
+
 const app = express();
 app.use(bodyParser.json())
+app.use(passport.initialize());
 
 // !!! DEVELOPMENT ONLY (start) !!! //
 
  //var corsOptions = {
- //    origin: 'http://localhost:4200',
+ // /   origin: 'http://localhost:4200',
  //    optionsSuccessStatus: 200 
  //}
   
-// app.use(cors(corsOptions))
+ //app.use(cors(corsOptions))
 
 // !!! DEVELOPMENT ONLY (end) !!! //
 
 
 // !!! PRODUCTION ONLY (start) !!! //
+
+
+require('./models/user');
+const users = require('./routes/users');
+app.use('/users', users);
 
 var distDir = __dirname + "/dist/group-project/";
 app.use(express.static(distDir));
@@ -31,8 +38,4 @@ app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname + "/dist/group-project/"))
 })
 
-// !!! PRODUCTION ONLY (end) !!! //
-
-// server config
 app.listen(process.env.PORT || 8080);
-
