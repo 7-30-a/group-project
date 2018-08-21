@@ -7,12 +7,15 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
   register(user) {
-    return this.http.post(`${window.location.origin}users/register`, user);
+    console.log("User Service Was Hit");
+    return this.http.post(`${window.location.origin}/users/register`, user);
   }
 
   login(user) {
     return this.http.post(`${window.location.origin}/users/login`, user);
   }
+
+
 
   constructor(private http: HttpClient) {
 

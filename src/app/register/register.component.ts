@@ -10,10 +10,14 @@ export class RegisterComponent implements OnInit {
   user: any
 
   register() {
+    console.log("Register!")
     this.userService.register(this.user).subscribe((data: any) => {
       localStorage.setItem('token', data.token) 
     });
   }
+
+  
+
 
   constructor(private userService: UserService) {
 

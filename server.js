@@ -32,6 +32,7 @@ const users = require('./routes/users');
 app.use('/users', users);
 
 var distDir = __dirname + "/dist/group-project/";
+distDir
 app.use(express.static(distDir));
 
 app.get('/*', (req, res) => {
