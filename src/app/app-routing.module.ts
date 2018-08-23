@@ -19,7 +19,7 @@ import { Quiz9Component } from "./quizzes/quiz9/quiz9.component";
 
 const routes: Routes = [
 
-	{ path: "", redirectTo: "/register", pathMatch: "full" },
+	{ path: "", redirectTo: "/login", pathMatch: "full" },
 	{ path: "login", component: LoginComponent },
 	{ path: "about", component: AboutComponent },
 	{ path: "home", component: HomeComponent },
