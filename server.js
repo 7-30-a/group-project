@@ -1,4 +1,3 @@
-
 const express = require('express');
 const path = require('path');
 let mongoose = require('mongoose');
@@ -26,17 +25,15 @@ app.use(passport.initialize());
 
 // !!! PRODUCTION ONLY (start) !!! //
 
-
 require('./models/user');
 const users = require('./routes/users');
 app.use('/users', users);
 
 var distDir = __dirname + "/dist/group-project/";
-distDir
 app.use(express.static(distDir));
 
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname + "/dist/group-project/"))
+    res.sendFile(path.join(__dirname + "/dist/group-project/index.html"))
 })
 
 app.listen(process.env.PORT || 8080);
