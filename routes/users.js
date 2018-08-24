@@ -18,6 +18,7 @@ router.post('/register', (req, res) => {
 })
 
 router.post('/login', ((req, res) => {
+    console.log("router HIT");
     User.findOne({userName: req.body.userName}, ((err, user) => {
         if(err) {
             res.sendStatus(500)
