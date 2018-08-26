@@ -33,6 +33,13 @@ export class UserService {
     return this.http.get<number>('/users/count');
   }
 
+<<<<<<< HEAD
+=======
+  addUser(user) {
+    return this.http.post('/user', user);
+  }
+
+>>>>>>> siteUpdates
   getUser(id:number) {
     console.log("GetUser")
     return this.http.get(`${window.location.origin}/users/`+ id);
