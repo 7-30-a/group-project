@@ -8,12 +8,20 @@ import { UserService } from '../user.service';
 })
 export class RegisterComponent implements OnInit {
   user: any
+  isloading = false;
 
   register() {
+    console.log("Register!")
     this.userService.register(this.user).subscribe((data: any) => {
       localStorage.setItem('token', data.token) 
     });
   }
+
+  getUser(){
+    console.log("getUser HIT");
+    this.userService.getUser(this.user).subscribe(data => this.user = data,error => console.log(error),() => this.isloading = false);
+  }
+
 
   constructor(private userService: UserService) {
 

@@ -24,6 +24,7 @@ import { RegisterComponent } from './register/register.component';
   declarations: [
     AppComponent,
     LoginComponent,
+    RegisterComponent,
     AboutComponent,
     HomeComponent,
     Quiz1Component,
@@ -35,7 +36,6 @@ import { RegisterComponent } from './register/register.component';
     Quiz7Component,
     Quiz8Component,
     Quiz9Component,
-    RegisterComponent,
   ],
   imports: [
     BrowserModule,

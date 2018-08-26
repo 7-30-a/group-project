@@ -7,6 +7,7 @@ router.post('/register', (req, res) => {
     let newUser = new User();
     newUser.userName = req.body.userName;
     newUser.setPassword(req.body.password);
+
     newUser.save((err) => {
         if(err) {
             res.send(err);
@@ -17,6 +18,7 @@ router.post('/register', (req, res) => {
 })
 
 router.post('/login', ((req, res) => {
+    console.log("router HIT");
     User.findOne({userName: req.body.userName}, ((err, user) => {
         if(err) {
             res.sendStatus(500)
@@ -30,4 +32,6 @@ router.post('/login', ((req, res) => {
     }))
 }))
 
+
+  
 module.exports = router;
