@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div>
+                    <img src="../../assets/Images/quizU.jpg">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="userProfile">
+                    <hr>
+                    <h2 style="text-align:center">User Profile</h2>
+              
+                    <div id="card1" class="card">
+                      <img src="../../assets/Images/Waffle2.png" alt="image" style="width:100%">
+                      <h1 id="fullname">Firstname Lastname</h1>
+                      <input id="inputLastname" class="hidebtn" placeholder="Lastname">
+                      <p id="userName" class="title">Username</p>
+                      <input id="inputUsername" class="hidebtn" placeholder="Username">
+                      <div class="btn-group">
+                          <button id="editbtn" class="btn btn-primary btn-lg " (click)="edit()">Edit</button>
+                          <button id="backbtn" class="btn btn-primary btn-lg " (click)="back()">Back</button>
+                      </div>
+                    </div>
+
+                    <div id="card2" class="card hidebtn">
+                        <img src="../../assets/Images/Waffle2.png" alt="image" style="width:100%">
+                          <div class="cardBody">
+                              <label >First name</label>
+                              <input id="inputFirstname" [(ngModel)]="user.firstName" placeholder="Firstname"><br>
+
+                              <label >Last name</label>
+                              <input id="inputLastname"  [(ngModel)]="user.lastName" placeholder="Lastname"><br>
+
+                              <label >Username</label>
+                              <input id="inputUsername" [(ngModel)]="user.userName"  placeholder="Username">
+                          </div>
+                        <div class="btn-group">
+                            <button id="savebtn" class="btn btn-primary btn-lg" (click)="save()">Save</button>
+                            <button id="backbtn" class="btn btn-primary btn-lg " (click)="back()">Back</button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                
+            </div>
+        </div>
+    </div>
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"></script>
+</body>
+</html>
