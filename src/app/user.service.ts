@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
 
   register(user) {
@@ -13,9 +17,13 @@ export class UserService {
  
   login(user) {
     console.log("Login Was Hit!");
-    return this.http.post(`${window.location.origin}/users/login`, user);
+    return this.http.post(`${window.location.origin}/users/login`, user)
+  
   }
 
+  logout(){
+    localStorage.removeItem('currentUser');
+  }
 
   getUsers(){
     return this.http.get<string[]>(`${window.location.origin}/users/`);
@@ -29,8 +37,9 @@ export class UserService {
     return this.http.post('/user', user);
   }
 
-  getUser(user) {
-    return this.http.get(`/user/${user._id}`,user);
+  getUser(id:number) {
+    console.log("GetUser")
+    return this.http.get(`${window.location.origin}/users/`+ id);
   }
 
   editUser(user) {

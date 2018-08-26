@@ -11,11 +11,24 @@ export class LoginComponent implements OnInit {
 
   user: any
 
+  //login() {
+  //  this.userService.getUser(1).subscribe((data:any) => {
+  //    localStorage.setItem('token', data.firstName) 
+  //  });
+  //  }
+
   login() {
-    this.userService.login(this.user).subscribe((data: any) => {
+  this.userService.login(this.user).subscribe((data: any) => {
+      console.log("Assigned token")
       localStorage.setItem('token', data.token) 
+      //localStorage.setItem('token', JSON.stringify(this.user)) 
       this.router.navigate(['/home'])
-    });
+
+    },
+    error => {
+      console.log('NOPE')
+    }
+  );
   }
 
 
