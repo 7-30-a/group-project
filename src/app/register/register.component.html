@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <title>Document</title>
+  <title>Register</title>
 </head>
 <body class="bg-light">
 
@@ -16,16 +16,16 @@
         <form class="needs-validation" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">
-              <label for="firstName">First name</label>
-              <input type="text" class="form-control"  id="firstName" placeholder="" value="" required>
+              <label for="firstname">First name</label>
+              <input type="text" [(ngModel)]="user.firstName" name="firstname" class="form-control"  id="firstName" placeholder="" value="" required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
 
             <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <label for="lastname">Last name</label>
+                <input type="text" [(ngModel)]="user.lastName" name="lastname" class="form-control" id="lastName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>

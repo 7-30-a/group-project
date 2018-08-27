@@ -25,8 +25,8 @@ app.use(passport.initialize());
 
 // !!! PRODUCTION ONLY (start) !!! //
 
-require('./models/user');
-const users = require('./routes/users');
+require('./server/models/user');
+const users = require('./server/routes/api');
 app.use('/users', users);
 
 var distDir = __dirname + "/dist/group-project/";
