@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from "@angular/router";
+import { IfStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -19,11 +20,24 @@ export class LoginComponent implements OnInit {
 
   login() {
   this.userService.login(this.user).subscribe((data: any) => {
-      console.log("Assigned token")
-      localStorage.setItem('token', data.token) 
-      //localStorage.setItem('token', JSON.stringify(this.user)) 
-      this.router.navigate(['/home'])
-
+      //console.log("Assigned token")
+      //console.log(data)
+      var lognErr = document.getElementById('loginError')
+      if(data.token){
+        lognErr.innerHTML = "Invalid Username Or Password"
+        lognErr.style.display = 'none'
+        localStorage.setItem('token', data.token) 
+        localStorage.setItem('firstName', data.firstName)
+        localStorage.setItem('lastName', data.lastName)
+        localStorage.setItem('userName', data.userName)
+        this.router.navigate(['/home'])
+ 
+      }
+      else{
+        
+        lognErr.innerHTML = "Invalid Username Or Password"
+        lognErr.style.display = 'block'
+      }
     },
     error => {
       console.log('NOPE')

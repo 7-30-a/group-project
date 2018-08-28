@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -17,24 +14,16 @@ export class UserService {
  
   login(user) {
     console.log("Login Was Hit!");
-    return this.http.post(`${window.location.origin}/users/login`, user)
+    return this.http.post(`${window.location.origin}/users/login`, user);
   
   }
 
   logout(){
-    localStorage.removeItem('currentUser');
-  }
+    localStorage.removeItem('token');
+    localStorage.removeItem('firstName');
+    localStorage.removeItem('lastName');
+    localStorage.removeItem('userName');
 
-  getUsers(){
-    return this.http.get<string[]>(`${window.location.origin}/users/`);
-  }
-
-  countUsers() {
-    return this.http.get<number>('/users/count');
-  }
-
-  addUser(user) {
-    return this.http.post('/user', user);
   }
 
   getUser(id:number) {
@@ -42,12 +31,16 @@ export class UserService {
     return this.http.get(`${window.location.origin}/users/`+ id);
   }
 
-  editUser(user) {
-    return this.http.put(`/user/${user._id}`, user, { responseType: 'text' });
+  updateUser(user) {
+    console.log('update User');
+    console.log(`${window.location.origin}/users/update`);
+    return this.http.put(`${window.location.origin}/update`,user);
+    //return this.http.put(`${window.location.origin}/users`,user);
+    //return this.http.put(`${window.location.origin}/update`,user);
   }
 
-  deleteUser(user) {
-    return this.http.delete(`/user/${user._id}`, { responseType: 'text' });
+  deleteUser(id:number) {
+    return this.http.delete(`${window.location.origin}/users/delete/`+ id, { responseType: 'text' });
   }
 
   constructor(private http: HttpClient) {

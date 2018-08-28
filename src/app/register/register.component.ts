@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -10,12 +11,21 @@ export class RegisterComponent implements OnInit {
   user: any
 
   register() {
-    this.userService.register(this.user).subscribe((data: any) => {
-      localStorage.setItem('token', data.token) 
-    });
+
+    if(this.user.firstName != null && 
+      !this.user.lastName != null  && 
+      !this.user.username != null  && 
+      !this.user.password != null ){
+        this.userService.register(this.user).subscribe((data: any) => {
+          if(data.token){
+            localStorage.setItem('token', data.token) 
+            this.router.navigate(['/login'])
+          }
+        });
+    }
   }
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,private router: Router) {
 
   }
 
@@ -25,6 +35,7 @@ export class RegisterComponent implements OnInit {
 
   
 }
+
 
 (function() {
   'use strict';
@@ -39,8 +50,10 @@ export class RegisterComponent implements OnInit {
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
+          console.log("allfilled1");
         }
         form.classList.add('was-validated');
+        console.log("allfilled2");
       }, false);
     });
   }, false);

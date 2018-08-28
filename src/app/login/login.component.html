@@ -23,7 +23,7 @@
 
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" [(ngModel)]="user.password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      
+      <p class="invalid-feedback" id="loginError"></p>
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
