@@ -1,0 +1,53 @@
+.userProfile{
+    padding-top: 50px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 375px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+.cardBody{
+    display: inline-block;
+    text-align: center;
+    font-family: arial;
+    margin:4px;
+}
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
+  
+  .hidebtn{
+      display: none;
+  }
+
+  .hideP{
+      visibility: hidden;
+  }
+
+  button {
+    border: none;
+    outline: 0;
+    padding: 8px;
+    font-size: 18px;
+    width: 50%;
+  }
+  input{
+      margin-left: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
+
+  body{
+    background-color:rgb(255,220,128);
+  }
