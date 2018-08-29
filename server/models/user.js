@@ -11,19 +11,29 @@ let UserSchema = new mongoose.Schema({
 });
 
 UserSchema.method("setPassword", function(password){
-  console.log("setPassword Was Hit")
   this.salt = crypto.randomBytes(16).toString('hex');
-  this.passwordHash = crypto.pbkdf2Sync(password.toString(), this.salt, 1000, 64, "sha1")
+  this.passwordHash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha1').toString('hex');
 });
 
 UserSchema.method("validatePassword", function(password){
-  console.log("validatePassword Was Hit")
-  //let hash = crypto.pbkdf2Sync(password.toString(), this.salt, 1000, 64, "sha1")
-  let hash = crypto.pbkdf2Sync(password.toString(), this.salt, 1000, 64, "sha1")
-  console.log(this.passwordhash)
-  console.log(hash)
+  let hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha1').toString('hex');
   return (hash === this.passwordHash);
 });
+
+// UserSchema.method("setPassword", function(password){
+//   console.log("setPassword Was Hit")
+//   this.salt = crypto.randomBytes(16).toString('hex');
+//   this.passwordHash = crypto.pbkdf2Sync(password.toString(), this.salt, 1000, 64, "sha1")
+// });
+
+// UserSchema.method("validatePassword", function(password){
+//   console.log("validatePassword Was Hit")
+//   //let hash = crypto.pbkdf2Sync(password.toString(), this.salt, 1000, 64, "sha1")
+//   let hash = crypto.pbkdf2Sync(password.toString(), this.salt, 1000, 64, "sha1")
+//   console.log(this.passwordhash)
+//   console.log(hash)
+//   return (hash === this.passwordHash);
+// });
 
 UserSchema.method("generateJWT", function(){
   return jwt.sign({
