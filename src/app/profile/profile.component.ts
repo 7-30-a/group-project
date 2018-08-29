@@ -14,6 +14,8 @@ export class ProfileComponent implements OnInit {
   fn: HTMLElement;
   un: HTMLElement;
 
+
+
   constructor(    
     private userService: UserService,
     private router: Router) {
@@ -28,12 +30,24 @@ export class ProfileComponent implements OnInit {
     this.hideObj(true);
   }
 
+  cancel(){
+    var card1 = document.getElementById("card1");
+    var card2 = document.getElementById("card2");
+    card1.classList.remove("hidebtn");
+    card2.classList.add("hidebtn");
+  }
+
   save(){
 
     this.fn.innerHTML = this.user.firstName + ' ' + this.user.lastName
     this.un.innerHTML = this.user.userName;
     this.hideObj(false);
 
+  }
+
+  delete(){
+    console.log(this.user.userName)
+    this.userService.deleteUser(this.user).subscribe();
   }
 
   hideObj(value){
@@ -55,7 +69,7 @@ export class ProfileComponent implements OnInit {
     }
     else
     {
-      this.userService.updateUser(this.user);
+      this.userService.updateUser(this.user).subscribe();
       card1.classList.remove("hidebtn");
       card2.classList.add("hidebtn");
     }
@@ -65,7 +79,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.user = {}
-    console.log("ngOnInit");
+
     this.fn = document.getElementById('fullname');
     this.un = document.getElementById('userName');
 

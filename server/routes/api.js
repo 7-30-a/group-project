@@ -15,6 +15,7 @@ router.post('/register', (req, res) => {
             res.json('User already exists');
         }
         else {
+            
             newUser.save((err) => {
                 if (err) {
                     res.send(err);
@@ -83,46 +84,53 @@ router.get('/users/:id', ((req, res) => {
 router.put('/update', ((req, res) => {
     console.log("UpdateID42")
     console.log(req.body.userName)
-    User.findOne({ userName: req.body.userName }, function ( user) {
-        if (!user)
-            res.status(400).send("unable to update the database");
+    User.findOne({ userName: req.body.userName }, ((err, user) => {
+        if (err) {
+            res.status(400).send("unable to update the database")
+            console.log("ERROR");
+        }
         else {
             if (user) {
+                console.log("user");
                 user.firstName = req.body.firstName;
                 user.lastName = req.body.lastName;
                 user.userName = req.body.userName;
-
-                User.save().then(user => {
-                    res.json('Update complete');
+                
+                user.save((err) => {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        res.json("Save complete")
+                    }
                 })
-                    .catch(err => {
-                        res.status(400).send("unable to update the database");
-                });
-
             }
             else {
                 console.log('invalid User')
                 res.json('Incorrect Data')
             }
         }
-    });
+    }));
 }))
 
-router.delete('/delete/:id', ((req, res) => {
-    console.log("UpdateID2")
-
-    console.log(req.params.id);
-
-    var id = req.params.id;
-    User.findById({ id: id }, function (err, user) {
+router.delete('/delete', ((req, res) => {
+    console.log("Delete")
+    console.log(req.body.userName)
+    User.findOne({ userName: req.body.userName }, ((err, user) => {
         if (err) {
-            res.json('Error');
+            res.status(400).send("unable to update the database")
+            console.log("ERROR");
         }
-        else{
-            res.json('Delete complete');
-            User.deleteOne(id);
+        else {
+            if (user) {
+                console.log('User Deleted')
+                User.deleteOne({ userName: req.body.userName })
+            }
+            else {
+                console.log('invalid User')
+                res.json('Incorrect Data')
+            }
         }
-    });
+    }));
 }))
 //Get all data 
 //router.get('/datacollection1class', function(req, res) { console.log("Get request for datacollection1class"); Datacollection1class.find({}) .exec(function(err, datacollection1class){ if(err) { console.log("Error retrieving datacollection1class."); } else { res.json(datacollection1class); } }) });
