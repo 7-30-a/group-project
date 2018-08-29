@@ -23,6 +23,7 @@ export class UserService {
     localStorage.removeItem('firstName');
     localStorage.removeItem('lastName');
     localStorage.removeItem('userName');
+    localStorage.removeItem('id');
 
   }
 
@@ -37,10 +38,10 @@ export class UserService {
     return this.http.put(`${window.location.origin}/users/update`,user);
   }
 
-  deleteUser(user) {
+  deleteUser(id:String) {
     console.log("Delete User")
-    console.log("DU " + user.userName)
-    return this.http.delete(`${window.location.origin}/users/delete`, user);
+
+    return this.http.delete(`${window.location.origin}/users/delete/` + id);
   }
 
   constructor(private http: HttpClient) {

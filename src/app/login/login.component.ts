@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('firstName', data.firstName)
         localStorage.setItem('lastName', data.lastName)
         localStorage.setItem('userName', data.userName)
+        localStorage.setItem('id',data.id)
         this.router.navigate(['/home'])
  
       }

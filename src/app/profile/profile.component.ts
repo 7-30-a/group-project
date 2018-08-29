@@ -41,13 +41,22 @@ export class ProfileComponent implements OnInit {
 
     this.fn.innerHTML = this.user.firstName + ' ' + this.user.lastName
     this.un.innerHTML = this.user.userName;
+
     this.hideObj(false);
 
   }
 
   delete(){
     console.log(this.user.userName)
-    this.userService.deleteUser(this.user).subscribe();
+    this.userService.deleteUser(this.user.id).subscribe((data: any) => {
+      console.log(data);
+      if(data == 'Delete complete')
+      {
+        this.userService.logout();
+        this.router.navigate(['/login'])
+      }
+
+    });
   }
 
   hideObj(value){
@@ -59,7 +68,8 @@ export class ProfileComponent implements OnInit {
 
       var spt 
       spt = this.fn.innerText.split(' ');
-     
+      
+      this.user.id = localStorage.getItem('id');
       this.user.firstName = spt[0];
       this.user.lastName = spt[1];
       this.user.userName = this.un.innerText;
@@ -69,6 +79,9 @@ export class ProfileComponent implements OnInit {
     }
     else
     {
+      localStorage.setItem('firstName',this.user.firstName);
+      localStorage.setItem('lastName',this.user.lastName);
+      localStorage.setItem('userName',this.user.userName);
       this.userService.updateUser(this.user).subscribe();
       card1.classList.remove("hidebtn");
       card2.classList.add("hidebtn");

@@ -37,7 +37,8 @@ router.post('/login', ((req, res) => {
             if (user) {
                 if (user.validatePassword(req.body.password)) {
                     console.log("GenerateJWT")
-                    res.json({ token: user.generateJWT(), firstName: user.firstName, lastName: user.lastName, userName: user.userName })
+                    console.log(user)
+                    res.json({ token: user.generateJWT(), firstName: user.firstName, lastName: user.lastName, userName: user.userName,id: user._id })
                 } else {
                     console.log("Incorrect Password")
                     res.json('Incorrect Password')
@@ -60,31 +61,9 @@ router.get('/users/:id', ((req, res) => {
     });
 }))
 
-// router.put('/users/update', ((req, res) => {
-//     console.log("UpdateID1")
-
-//     User.findOne({ userName: req.body.userName }, function ( user) {
-//         if (!user)
-//             return next(new Error('Could not load Document'));
-//         else {
-//             user.firstName = req.body.firstName;
-//             user.lastName = req.body.lastName;
-//             user.userName = req.body.userName;
-
-//             User.save().then(user => {
-//                 res.json('Update complete');
-//             })
-//                 .catch(err => {
-//                     res.status(400).send("unable to update the database");
-//                 });
-//         }
-//     });
-// }))
-
 router.put('/update', ((req, res) => {
-    console.log("UpdateID42")
-    console.log(req.body.userName)
-    User.findOne({ userName: req.body.userName }, ((err, user) => {
+    console.log(req.body.id)
+    User.findById(req.body.id, ((err, user) => {
         if (err) {
             res.status(400).send("unable to update the database")
             console.log("ERROR");
@@ -112,10 +91,11 @@ router.put('/update', ((req, res) => {
     }));
 }))
 
-router.delete('/delete', ((req, res) => {
+router.delete('/delete/:id', ((req, res) => {
     console.log("Delete")
-    console.log(req.body.userName)
-    User.findOne({ userName: req.body.userName }, ((err, user) => {
+    console.log(req.params.id)
+
+    User.findById(req.params.id, ((err, user) => {
         if (err) {
             res.status(400).send("unable to update the database")
             console.log("ERROR");
@@ -123,7 +103,15 @@ router.delete('/delete', ((req, res) => {
         else {
             if (user) {
                 console.log('User Deleted')
-                User.deleteOne({ userName: req.body.userName })
+                User.deleteOne({_id: req.params.id},((err, user) => {
+                    if (err){
+                        console.log(err)
+                    }
+                    else
+                    {
+                        res.json("Delete complete")
+                    }
+                }));
             }
             else {
                 console.log('invalid User')
@@ -132,12 +120,5 @@ router.delete('/delete', ((req, res) => {
         }
     }));
 }))
-//Get all data 
-//router.get('/datacollection1class', function(req, res) { console.log("Get request for datacollection1class"); Datacollection1class.find({}) .exec(function(err, datacollection1class){ if(err) { console.log("Error retrieving datacollection1class."); } else { res.json(datacollection1class); } }) });
-
-//retrieve data by id 
-//router.get('/user/:id', function(req, res) { 
-//   console.log("Get request for sigle document"); 
-//   Datacollection1class.findById(req.params.id) .exec(function(err, User){ if(err) { console.log("Error retrieving datacollection1classsingle."); } else { res.json(datacollection1classsingle); } }) });
 
 module.exports = router;
