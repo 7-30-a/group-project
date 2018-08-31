@@ -23,6 +23,7 @@ export class UserService {
     localStorage.removeItem('firstName');
     localStorage.removeItem('lastName');
     localStorage.removeItem('userName');
+    localStorage.removeItem('id');
 
   }
 
@@ -34,13 +35,13 @@ export class UserService {
   updateUser(user) {
     console.log('update User');
     console.log(`${window.location.origin}/users/update`);
-    return this.http.put(`${window.location.origin}/update`,user);
-    //return this.http.put(`${window.location.origin}/users`,user);
-    //return this.http.put(`${window.location.origin}/update`,user);
+    return this.http.put(`${window.location.origin}/users/update`,user);
   }
 
-  deleteUser(id:number) {
-    return this.http.delete(`${window.location.origin}/users/delete/`+ id, { responseType: 'text' });
+  deleteUser(id:String) {
+    console.log("Delete User")
+
+    return this.http.delete(`${window.location.origin}/users/delete/` + id);
   }
 
   constructor(private http: HttpClient) {
