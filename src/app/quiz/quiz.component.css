@@ -20,7 +20,7 @@ body {
     text-align: center;
     color: #fff;
     padding: 2px 0px;
-    border-radius: 50px;
+    border-radius: 500px;
 }
 
 .grid #question {
@@ -31,9 +31,11 @@ body {
 
 .buttons {
     margin-top: 30px;
+    margin-left: 125px;
+
 }
 
-#btn0, #btn1, #btn2, #btn3 {
+#btn0 {
     background-color: #77aa97;
     width: 250px;
     font-size: 20px;
@@ -49,7 +51,7 @@ body {
     font-size: 18px;
 }
 
-#btn0:hover, #btn1:hover, #btn2:hover, #btn3:hover {
+#btn0:hover {
     cursor: pointer;
     background-color: #57636e;
 }
