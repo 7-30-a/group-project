@@ -20,7 +20,8 @@ import { ProfileComponent } from './profile/profile.component';
     RegisterComponent,
     AboutComponent,
     HomeComponent,
-    QuizComponent
+    QuizComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
