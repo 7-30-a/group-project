@@ -43,11 +43,12 @@
                               <input id="inputLastname"  [(ngModel)]="user.lastName" placeholder="Lastname"><br>
 
                               <label >Username</label>
-                              <input id="inputUsername" [(ngModel)]="user.userName"  placeholder="Username">
+                              <input id="inputUsername" [(ngModel)]="user.userName"  placeholder="Username"><br>
+                              <button id="backbtn" class="btn btn-link " (click)="delete()">Delete User</button>
                           </div>
                         <div class="btn-group">
                             <button id="savebtn" class="btn btn-primary btn-lg" (click)="save()">Save</button>
-                            <button id="backbtn" class="btn btn-primary btn-lg " (click)="back()">Back</button>
+                            <button id="backbtn" class="btn btn-primary btn-lg " (click)="cancel()">Cancel</button>
                         </div>
                       </div>
                 </div>
