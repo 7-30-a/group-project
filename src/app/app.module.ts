@@ -8,15 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
 
-import { Quiz1Component } from './quizzes/quiz1/quiz1.component';
-import { Quiz2Component } from './quizzes/quiz2/quiz2.component';
-import { Quiz3Component } from './quizzes/quiz3/quiz3.component';
-import { Quiz4Component } from './quizzes/quiz4/quiz4.component';
-import { Quiz5Component } from './quizzes/quiz5/quiz5.component';
-import { Quiz6Component } from './quizzes/quiz6/quiz6.component';
-import { Quiz7Component } from './quizzes/quiz7/quiz7.component';
-import { Quiz8Component } from './quizzes/quiz8/quiz8.component';
-import { Quiz9Component } from './quizzes/quiz9/quiz9.component';
+import { QuizComponent } from './quiz/quiz.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 
@@ -28,16 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
     RegisterComponent,
     AboutComponent,
     HomeComponent,
-    Quiz1Component,
-    Quiz2Component,
-    Quiz3Component,
-    Quiz4Component,
-    Quiz5Component,
-    Quiz6Component,
-    Quiz7Component,
-    Quiz8Component,
-    Quiz9Component,
-    ProfileComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
