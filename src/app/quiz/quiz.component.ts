@@ -33,7 +33,7 @@ export class QuizComponent implements OnInit {
     new Question(6, "Just when you do, it leaps forth. Forcing you to...", ["Hit it with your sheild", "Cut it down", "Drop everything an run", "Dodge out of the way"], "Cut it down","../../assets/Images/quizes/6/PlayerUnknown.jpg","Nice one... Unknown Hero"),
     new Question(6, "Your swift moves leave you hurt, but alive. You're now at a fork, where do you go...", ["Left", "Right", "Forward", "Drop everything an run"], "Left","../../assets/Images/quizes/6/TombRaider.jpg","A true Tomb Raider"),
     new Question(6, "The path leads to an ancient ruine. You make half way through when the floor begins to crumble. You look back an...", ["Drop everything... AN RUN!", "Go back the way you came and jump it", "Run as fast as you can forward", "Look for a switch, there has to be a switch!"], "Run as fast as you can forward","../../assets/Images/quizes/6/ShovelKnight.png","Simi-Text Adventurer"),
-    new Question(6, "Your decision saved your life an large gold chest lays before you. You open it an...", ["Take the treasure", "DROP EVERYTHING AND RUN", "leave the treasure", "Leave a 'I was here' note and close the chest"], "Take the treasure","../../assets/Images/quizes/6/Dragoon.jpg","Congrates Brave Adventurer"),
+    new Question(6, "Your decision saved your life an a large gold chest lays before you. You open it an...", ["Take the treasure", "DROP EVERYTHING AND RUN", "leave the treasure", "Leave a 'I was here' note and close the chest"], "Take the treasure","../../assets/Images/quizes/6/Dragoon.jpg","Congrates Brave Adventurer"),
 
     
     // new Question(5, "What bird has the longest wingspan?", ["Stork", "Swan", "Condor", "Albatross"], "Albatross","../../assets/Images/tacoNinja.jpg"),

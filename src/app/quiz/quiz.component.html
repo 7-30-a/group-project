@@ -14,36 +14,62 @@
             <div class="col-md-3">
 
             </div>
-            <div id="questions" class="col-md-6">
-                <div class="grid">
-                    <div id="quiz">
-                        <h1>Quiz{{quizId}}</h1>
-                        <hr style="margin-bottom: 10px">
-
-                        <p id="question">{{currentQuestion.question}}</p>
-
-                        <div class="buttons">
-                            <button id="btn0" *ngFor="let choices of currentQuestion.choices" (click)="checkChoice(choices)">{{choices}}</button>
+            <div id="questions" class="col-12 col-sm-6 col-lg-8">
+                <div id="quiz" class="grid">
+                    <div class="row ">
+                        <div class="col-12 qTitle">
+                            <h1>Quiz{{quizId}}</h1>
+                            <hr style="margin-bottom: 10px">
                         </div>
+                    </div>
 
-                        <hr style="margin-top: 50px">
-                        <label for="">Points: </label>{{currentPoints}}
-                        <footer>
-                        </footer>
+                    <div class="row">
+                        <div class="col-12">
+                            <p id="question">{{currentQuestion.question}}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="buttons">
+                                <button id="btn0" *ngFor="let choices of currentQuestion.choices" (click)="checkChoice(choices)">{{choices}}</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <hr style="margin-top: 50px">
+                            <label for="">Points: {{currentPoints}}</label>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div id="endCard" class="col-md-6 hidCard">
-                <div class="grid">
-                    <div id="quiz">
-                        <hr style="margin-bottom: 10px">
-                        <h1>Result</h1>
-                        <label for="">Points: </label>{{currentPoints}}
-                        <p id="question">{{endCardResult}}</p>
-                        <img src={{endCardimage}}>
-                        <div class="buttons">
-                            <button id="btn0" (click)="back()">Back</button>
+            <div id="endCard" class="col-12 col-sm-6 col-lg-8 hidCard">
+                <div id="quiz" class="grid">
+                    <div class="row ">
+                        <div class="col-12 qTitle">
+                            <h1>Result</h1>
+                            <hr style="margin-bottom: 10px">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12">
+                            <label for="">Points: </label>{{currentPoints}}
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12">
+                            <p id="question">{{endCardResult}}</p>
+                            <img src={{endCardimage}}>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12">
+                            <div class="buttons">
+                                <button id="btn0" (click)="back()">Back</button>
+                            </div>
                         </div>
                     </div>
                 </div>
