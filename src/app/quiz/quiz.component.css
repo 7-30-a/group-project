@@ -3,8 +3,8 @@ body {
 }
 
 .grid {
-    width: 600px;
-    height: 500px;
+    /* width: 600px;
+    height: 500px; */
     margin: 0 auto;
     background-color: #fff;
     padding: 10px 50px 50px 50px;
@@ -23,6 +23,10 @@ body {
     border-radius: 500px;
 }
 
+.hidCard{
+    display: none;
+}
+
 .grid #question {
     font-family: sans-serif;
     font-size: 30px;
@@ -33,6 +37,10 @@ body {
     margin-top: 30px;
     margin-left: 125px;
 
+}
+
+img{
+    width: 100%;    
 }
 
 #btn0 {
