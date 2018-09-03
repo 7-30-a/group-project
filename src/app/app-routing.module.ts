@@ -8,7 +8,6 @@ import { RegisterComponent } from './register/register.component';
 import { QuizComponent } from "./quiz/quiz.component";
 import { ProfileComponent } from "./profile/profile.component";
 
-
 const routes: Routes = [
 
 	{ path: "", redirectTo: "/login", pathMatch: "full" },

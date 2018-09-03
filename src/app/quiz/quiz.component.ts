@@ -14,6 +14,28 @@ export class QuizComponent implements OnInit {
   points = 0;
   questions = []
   allQuestions = [
+
+    // Whats your personality type?
+    new Question(1, "This trait best decribes me:", ["Outgoing", "Reserved", "Witty", "Bashful"], "Reserved", "../../assets/Images/quizes/1/shy-potato.gif", "You are a... Shy Potato"),
+    new Question(1, "When dealing with a conflict I...", ["Avoid it", "Face it head on", "Try and find a diplomatic solution", "Stir the pot, I love drama!"], "Stir the pot, I love drama!", "../../assets/Images/quizes/1/sass-quatch.jpg", "You are a... Sass-quatch"),
+    new Question(1, "Which is the best solution for me:", ["The most logical", "The one that makes everyone happy", "The easiest", "No solution.. mwahaha!"], "The most logical", "../../assets/Images/quizes/1/chin-chiller.jpg", "You are a... Chin-chiller"),
+    new Question(1, "Do you enjoy talking to people?", ["Yes! Lets chat it up!", "Its alright", "Only in small groups", "I want to live in a cave, alone."], "Yes! Lets chat it up!", "../../assets/Images/quizes/1/turnup-turnip.gif", "You are a... Turnt up Turnip"),
+    new Question(1, "How do you approach leadership?", ["I'm always the leader.", "I try not to be a leader but I always end up one.", "I dont lead.", "Im scared to lead."], "I'm always the leader.", "../../assets/Images/quizes/1/extrovert-bear.jpg", "You are a... Extroverted Emily"),
+    
+    // Who is your perfect match?
+    new Question(2, "You wish love was more:", ["Simple.. geez", "Logical", "Kind", "Sensual"], "Simple.. geez", "../../assets/Images/quizes/2/party-animal.jpg", "You need a... Party Animal!"),
+    new Question(2, "You secretly want the love of your life to have..", ["Good looks", "Money", "Power", "Similar intrests"], "Good looks", "../../assets/Images/quizes/2/shyguy.jpg", "You need a... Shy Guy!"),
+    new Question(2, "Why aren't you married?", ["I dont have time to date", "I pick terrible people", "I find most people mundane.", "I dont want to be married."], "I dont have time to date", "../../assets/Images/quizes/2/smooth-operator.jpg", "You need a... Smooth Operator!"),
+    new Question(2, "What do you hope to have the most in common with your partner?", ["Similar music taste", "Similar goals", "Similar sense of humor", "Similar religious beliefs"], "Similar music taste", "../../assets/Images/quizes/2/nerd-velma.jpg", "You need a... Smarty Pants!"),
+    new Question(2, "What do you look for in a partner?", ["Adventurous", "Intellegent", "Compassionate", "Passionate"], "Adventurous", "../../assets/Images/quizes/2/adventure-rick.jpg", "You need an... Adventurous Andy!"),
+
+    // How close are you and your bestie?
+    new Question(3, "When did you last talk to your best friend?", ["Were talking now!", "Yesterday", "Last week", "Uh.. a month or more ago"], "Were talking now!", "../../assets/Images/quizes/3/best-budz.jpg", "You guys are... Best Buds Fo' Sho'!"),
+    new Question(3, "How long have you known them?", ["Since I was born.. almost.", "5+ years", "1-4 years", "Less than a year"], "Less than a year", "../../assets/Images/quizes/3/kinda-cool.png", "You guys are... acquaintances!"),
+    new Question(3, "Do you know their birthday?", ["Of course! I know the time too.", "Yup. Month, date and year.", "I know the month, not the date..", "No idea"], "No idea", "../../assets/Images/quizes/3/stalker.png", "You are a... Stalker! Sorry."),
+    new Question(3, "Are you friends with their family?", ["I am family.", "Yeah I know a few", "I've heard of them", "What family?"], "Yeah I know a few", "../../assets/Images/quizes/3/crazy-close.jpg", "You guys are... Super BFFs!"),
+    new Question(3, "Does he/she consider you to be their best friend?", ["Duh!", "Maybe! I hope so.", "Maybe not.", "Actually, no."], "Actually, no.", "../../assets/Images/quizes/3/not-so-close.png", "You guys are... Not that close! Ouch."),
+
     //What Kind Of Taco are You?
     new Question(4, "What are the best kind of Tacos?", ["Hard", "Soft", "Naked", "I don't like tacos..."], "Hard", "../../assets/Images/quizes/4/droppedTaco.jpg", "You are a... Dropped Taco"),
     new Question(4, "If tacos gave you super powers, what would it be?", ["Fire Breath", "Epic Flatulents", "To able to Stick your hand in your pocket, and pull out a taco", "To be able to Make the best taco ever"], "Fire Breath", "../../assets/Images/quizes/4/walkingtaco.gif", "You are a... Walking Taco"),
