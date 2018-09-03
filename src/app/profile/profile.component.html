@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Profile</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Quiz U</a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Catagories</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">Category1</a>
+                        <a class="dropdown-item" href="#">Category2</a>
+                        <a class="dropdown-item" href="#">Category3</a>
+                    </div>
+                </li>
+            </ul>
+
+            <form class="form-inline mt-2 mt-md-0">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="Profile" (click)="Profile()">Profile</button>
+            </form>
+
+            <ul class="navbar-nav px-3">
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logOut()" href="#">Log Out</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+
+    </nav>
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -20,49 +64,51 @@
                 <div class="userProfile">
                     <hr>
                     <h2 style="text-align:center">User Profile</h2>
-              
+
                     <div id="card1" class="card">
-                      <img src="../../assets/Images/Waffle2.png" alt="image" style="width:100%">
-                      <h1 id="fullname">Firstname Lastname</h1>
-                      <input id="inputLastname" class="hidebtn" placeholder="Lastname">
-                      <p id="userName" class="title">Username</p>
-                      <input id="inputUsername" class="hidebtn" placeholder="Username">
-                      <div class="btn-group">
-                          <button id="editbtn" class="btn btn-primary btn-lg " (click)="edit()">Edit</button>
-                          <button id="backbtn" class="btn btn-primary btn-lg " (click)="back()">Back</button>
-                      </div>
+                        <img src="../../assets/Images/Waffle2.png" alt="image" style="width:100%">
+                        <h1 id="fullname">Firstname Lastname</h1>
+                        <input id="inputLastname" class="hidebtn" placeholder="Lastname">
+                        <p id="userName" class="title">Username</p>
+                        <input id="inputUsername" class="hidebtn" placeholder="Username">
+                        <div class="btn-group">
+                            <button id="editbtn" class="btn btn-primary btn-lg " (click)="edit()">Edit</button>
+                            <button id="backbtn" class="btn btn-primary btn-lg " (click)="back()">Back</button>
+                        </div>
                     </div>
 
                     <div id="card2" class="card hidebtn">
                         <img src="../../assets/Images/Waffle2.png" alt="image" style="width:100%">
-                          <div class="cardBody">
-                              <label >First name</label>
-                              <input id="inputFirstname" [(ngModel)]="user.firstName" placeholder="Firstname"><br>
+                        <div class="cardBody">
+                            <label>First name</label>
+                            <input id="inputFirstname" [(ngModel)]="user.firstName" placeholder="Firstname"><br>
 
-                              <label >Last name</label>
-                              <input id="inputLastname"  [(ngModel)]="user.lastName" placeholder="Lastname"><br>
+                            <label>Last name</label>
+                            <input id="inputLastname" [(ngModel)]="user.lastName" placeholder="Lastname"><br>
 
-                              <label >Username</label>
-                              <input id="inputUsername" [(ngModel)]="user.userName"  placeholder="Username"><br>
-                              <button id="backbtn" class="btn btn-link " (click)="delete()">Delete User</button>
-                          </div>
+                            <label>Username</label>
+                            <input id="inputUsername" [(ngModel)]="user.userName" placeholder="Username"><br>
+                            <button id="backbtn" class="btn btn-link " (click)="delete()">Delete User</button>
+                        </div>
                         <div class="btn-group">
                             <button id="savebtn" class="btn btn-primary btn-lg" (click)="save()">Save</button>
                             <button id="backbtn" class="btn btn-primary btn-lg " (click)="cancel()">Cancel</button>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3">
-                
+
             </div>
         </div>
     </div>
-  
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"></script>
 </body>
+
 </html>
