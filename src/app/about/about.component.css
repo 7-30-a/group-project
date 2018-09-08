@@ -1,5 +1,12 @@
 
+.pgBG{
+  background-color:rgb(255,220,128) !important;
+}
 
-  body{
-    background-color:rgb(255,220,128) !important;
-  }
+.card-text{
+  text-align: center;
+}
+
+  .bump{
+    padding-top: 80px;
+}

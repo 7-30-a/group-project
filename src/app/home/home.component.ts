@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
 
    Profile(){
     this.router.navigate(['/profile'])
-    
    }
+   
   constructor(private userService: UserService,
     private router: Router) { }
 
