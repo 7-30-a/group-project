@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Question } from 'src/app/question';
 import { Router } from "@angular/router";
-
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-quiz',
@@ -92,6 +92,17 @@ export class QuizComponent implements OnInit {
   endCardimage = "";
   endCardResult = "";
 
+  
+  Profile(){
+    this.router.navigate(['/profile'])
+   }
+
+   
+  logOut() {
+    this.userService.logout();
+    this.router.navigate(['/login'])
+   }
+
   checkChoice(choices) {
     this.questionNum += 1;
 
@@ -123,7 +134,7 @@ export class QuizComponent implements OnInit {
     this.router.navigate(['/home'])
   }
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router,private userService: UserService) { }
 
   ngOnInit() {
     this.route.url.subscribe(url => {
