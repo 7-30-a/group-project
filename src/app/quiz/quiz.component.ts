@@ -31,8 +31,8 @@ export class QuizComponent implements OnInit {
 
     // How close are you and your bestie?
     new Question(3, "When did you last talk to your best friend?", ["Were talking now!", "Yesterday", "Last week", "Uh.. a month or more ago"], "Were talking now!", "../../assets/Images/quizes/3/best-budz.jpg", "You guys are... Best Buds Fo' Sho'!"),
-    new Question(3, "How long have you known them?", ["Since I was born.. almost.", "5+ years", "1-4 years", "Less than a year"], "Less than a year", "../../assets/Images/quizes/3/kinda-cool.png", "You guys are... acquaintances!"),
-    new Question(3, "Do you know their birthday?", ["Of course! I know the time too.", "Yup. Month, date and year.", "I know the month, not the date..", "No idea"], "No idea", "../../assets/Images/quizes/3/stalker.png", "You are a... Stalker! Sorry."),
+    new Question(3, "How long have you known them?", ["Since I was born.. almost.", "5+ years", "1-4 years", "Less than a year"], "Less than a year", "../../assets/Images/quizes/3/kinda-cool.jpg", "You guys are... acquaintances!"),
+    new Question(3, "Do you know their birthday?", ["Of course! I know the time too.", "Yup. Month, date and year.", "I know the month, not the date..", "No idea"], "No idea", "../../assets/Images/quizes/3/stalker.jpg", "You are a... Stalker! Sorry."),
     new Question(3, "Are you friends with their family?", ["I am family.", "Yeah I know a few", "I've heard of them", "What family?"], "Yeah I know a few", "../../assets/Images/quizes/3/crazy-close.jpg", "You guys are... Super BFFs!"),
     new Question(3, "Does he/she consider you to be their best friend?", ["Duh!", "Maybe! I hope so.", "Maybe not.", "Actually, no."], "Actually, no.", "../../assets/Images/quizes/3/not-so-close.png", "You guys are... Not that close! Ouch."),
 
