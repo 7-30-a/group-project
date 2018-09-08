@@ -13,55 +13,45 @@
 
 </head>
 
-<body>
+<body class="pgBG">
   <!-- NAVIGATION BAR -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Quiz U</a>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/about" class="nav-link">About</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Catagories</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Category1</a>
-            <a class="dropdown-item" href="#">Category2</a>
-            <a class="dropdown-item" href="#">Category3</a>
-          </div>
-        </li>
-      </ul>
-
-      <form class="form-inline mt-2 mt-md-0">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="Profile" (click)="Profile()">Profile</button>
-      </form>
-
-      <ul class="navbar-nav px-3">
-        <li class="nav-item">
-          <a class="nav-link" (click)="logOut()" href="#">Log Out</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-      <div class="container d-flex justify-content-between">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-expand-md navbar-light navBlue fixed-top">
+      <a class="navbar-brand" href="#">Quiz U</a>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/about" class="nav-link">About</a>
+          </li>
+        </ul>
+  
+        <form class="form-inline mt-2 mt-md-0">
+          <button class="btn btn-success my-2 my-sm-0" type="Profile" (click)="Profile()">Profile</button>
+        </form>
+  
+        <ul class="navbar-nav px-3">
+          <li class="nav-item">
+            <a class="nav-link" (click)="logOut()" href="#">Log Out</a>
+          </li>
+        </ul>
       </div>
-    </div>
-
-  </nav>
-  <!-- NAVIGATION BAR -->
+  
+      <div class="navbar navbar-light navBlue ">
+        <div class="container d-flex justify-content-between">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- NAVIGATION BAR -->
 
   <main role="main">
 
-    <section class="jumbotron text-center">
+    <section class="jumbotron text-center pgBG">
       <div class="container">
         <h1 class="jumbotron-heading">Hello, Welcome to Quiz U!</h1>
         <p class="lead text-muted">Here you can take many of our quizzes to find out more about your personality, relationships,
@@ -69,12 +59,12 @@
       </div>
     </section>
     <!-- QUIZ TILES -->
-    <div class="album py-5 bg-light">
+    <div class="album py-5">
       <div class="container">
 
         <div class="row">
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm pgBG animateRight">
               <div class="card-body">
                 <p style="text-align: center" class="card-text">What is your personality type?</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -84,7 +74,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm pgBG animateUp">
               <div class="card-body">
                 <p style="text-align: center" class="card-text">Who is your most compatible partner?</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -94,7 +84,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm pgBG animateLeft">
               <div class="card-body">
                 <p style="text-align: center" class="card-text">How close are you and your best friend?</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -105,7 +95,7 @@
           </div>
 
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm pgBG animateRight">
               <div class="card-body">
                 <p style="text-align: center" class="card-text">What Kind Of Taco Are You?</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -116,7 +106,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm pgBG animateUp">
               <div class="card-body">
                 <p class="card-text">What Anime Character Are You?</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -126,7 +116,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm pgBG animateLeft">
               <div class="card-body">
                 <p class="card-text">Adventure</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -137,7 +127,7 @@
           </div>
 
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm pgBG animateRight">
               <div class="card-body">
                 <p class="card-text">What Game Character Are You?</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -147,7 +137,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm pgBG animateUp">
               <div class="card-body">
                 <p class="card-text">What Movie Should You Watch?</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -157,7 +147,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
+            <div class="card mb-4 shadow-sm pgBG animateLeft">
               <div class="card-body">
                 <p class="card-text">How Gamer Are You?</p>
                 <div class="d-flex justify-content-between align-items-center">

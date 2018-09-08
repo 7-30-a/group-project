@@ -5,3 +5,12 @@
   }
   
   .lh-condensed { line-height: 1.25; }
+
+  
+body {
+ 
+  background-image: url("../../assets/Images/LoginPage.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+ 
+}
