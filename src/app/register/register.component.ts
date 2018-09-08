@@ -10,6 +10,10 @@ import { Router } from "@angular/router";
 export class RegisterComponent implements OnInit {
   user: any
 
+  back(){
+    this.router.navigate(['/login'])
+  }
+
   register() {
 
     if(this.user.firstName != null && 
