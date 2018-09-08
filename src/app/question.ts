@@ -1,14 +1,16 @@
 export class Question {
    
     quizId: number;
+    quizTitle: string;
     question: string;
     choices: string[];
     correct: string;
     endCard: string;
     endCardResult: string;
    
-    constructor(id, question, choices, correct,endCard,endCardResult){
+    constructor(id,quizTitle, question, choices, correct,endCard,endCardResult){
       this.quizId = id;
+      this.quizTitle = quizTitle;
       this.question = question;
       this.choices = choices;
       this.correct = correct;
